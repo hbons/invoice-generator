@@ -1,0 +1,29 @@
+{
+  "invoice": {
+    "currency":  "⍟",
+    "client": {
+      "name":     "Tom Nook",
+      "address":  "1 Animal Crossing",
+      "city":     "Raccoon Town",
+      "postcode": "BE L1S",
+      "country":  "Wild World"
+    },
+    "services": [
+      {
+        "title":       "Fishing",
+        "description": "Ocean Sunfish, Neon Tetra",
+        "amount":      1000
+      }
+    ],
+    "expenses" : [
+      {
+        "description": "Fishing rod",
+        "amount":      500
+      },
+      {
+        "description": "Garbage disposal fee",
+        "amount":      300
+      }
+    ]
+  }
+}

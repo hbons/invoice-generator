@@ -1,0 +1,26 @@
+{
+  "name": "invoice-generator",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hbons/invoice-generator"
+  },
+  "main": "invoices.js",
+  "author": "Hylke Bons",
+  "contributors": [
+    {
+      "name": "Hylke Bons",
+      "email": "hi@planetpeanut.uk"
+    }
+  ],
+  "license": "Public Domain",
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "~4.12.2",
+    "jade": "~1.9.2",
+    "node-sass": "~3.0.0-alpha.0"
+  },
+  "scripts": {
+    "invoice": "cp invoices/_invoice.json invoices/`date +%Y-%m-%d`.json && echo Created invoices/`date +%Y-%m-%d`.json"
+  }
+}

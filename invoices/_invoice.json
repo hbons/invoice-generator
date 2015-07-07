@@ -1,0 +1,26 @@
+{
+  "invoice": {
+    "currency":  "",
+    "client": {
+      "name":     "",
+      "address":  "",
+      "city":     "",
+      "postcode": "",
+      "country":  ""
+    },
+    "services": [
+      {
+        "title":       "",
+        "description": "",
+        "amount":      0
+      }
+    ],
+    "expenses" : [
+      {
+        "description": "",
+        "amount":      0
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,115 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Invoice #{invoice.you.name} to #{invoice.client.name} (#{invoice.reference})
+    link(rel="stylesheet", href="/stylesheets/default.css")
+  body
+    #page1.page
+      #logo
+      .clear
+      #parties
+        .to
+          h2 To:
+          strong= invoice.client.name
+          p
+            | #{invoice.client.address}<br>
+            | #{invoice.client.city}, #{invoice.client.postcode}<br>
+            | #{invoice.client.country}
+        .from
+          h2 From:
+          strong= invoice.you.name
+          p
+            | #{invoice.you.address}<br>
+            | #{invoice.you.city}, #{invoice.you.postcode}<br>
+            | #{invoice.you.country}
+        .details
+          table.values
+            tr
+              td Date:
+              td #{invoice.date}
+            tr
+              td Reference:
+              td #{invoice.reference}
+      .clear
+      h1 Hello, here is your invoice
+      #services
+        table
+          tr
+              th Services
+              th Description
+              th Amount
+          each service in invoice.services
+            tr
+              td
+                | <strong>#{service.title}</strong><br>
+              td #{service.description}
+              td #{service.amount}
+          if invoice.total_expenses
+            tr
+              td(colspan="2") <strong>Incurred expenses</strong>
+              td #{invoice.total_expenses}
+          tr
+            td(colspan="3")
+        #total
+          span Total &nbsp;
+          | #{invoice.total}
+        #due due <strong>#{ invoice.due }</strong>
+      .clear
+      #payment
+        .method
+          h2 Bank transfer
+          table.values
+            tr
+              td Account:
+              td #{invoice.payment.account_name}
+            tr
+              td IBAN:
+              td #{invoice.payment.iban}
+            tr
+              td SWIFT: 
+              td #{invoice.payment.swift}
+        .method
+          h2 Cheque
+          p
+            | Please make cheques payable to <strong>#{invoice.payment.account_name}</strong><br>
+            | and send them to the address listed above.
+        .details
+          p
+            | Please quote the reference <strong class="number">#{invoice.reference}</strong> with your payment.<br>
+            | If you have any questions: <strong>#{invoice.you.email}</strong>
+      #footer
+    if invoice.total_expenses
+    #page2.page
+      #logo
+      .clear
+      #expenses
+        .description
+          p
+            | Details about the incurred expenses (already included in the invoice).<br>
+            | If you have any questions: <strong>#{invoice.you.email}</strong>
+        .details
+          table.values
+            tr
+              td Date:
+              td #{invoice.date}
+            tr
+              td Reference:
+              td #{invoice.reference}
+      .clear
+      h1 Incurred expenses
+      #services
+        table
+          tr
+            th Description
+            th Amount
+          each expense in invoice.expenses
+            tr
+              td <strong>#{expense.description}</strong>
+              td #{expense.amount}
+          tr
+            td(colspan="2")
+        #total
+          span Total &nbsp;
+          | #{invoice.total_expenses}
+      #footer.expenses

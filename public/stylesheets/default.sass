@@ -1,0 +1,227 @@
+$base-color: #2E8B57
+$text-color: #333333
+$second-text-color: #9b9b9b
+
+*
+  margin: 0
+  padding: 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  -o-box-sizing: border-box
+  -ms-box-sizing: border-box
+  box-sizing: border-box
+
+@page
+  margin: 0
+  size: A4
+
+html, body 
+  width: 210mm
+  height: 297mm
+  margin: 0 auto
+
+@media print      
+  html, body
+    width: 100%
+    height: 100%
+    background-color: #fff
+  .page
+    page-break-after: always
+
+body
+  background-color: #333
+  font-family: 'Lato'
+  color: #333
+  font-size: 3.5mm
+  line-height: 161%
+  
+.clear
+  width: 0
+  clear: both
+  height: 16mm
+
+h1
+  font-family: 'Dosis'
+  font-size: 7mm
+  margin-bottom: 7mm
+
+h2
+  font-family: 'Dosis'
+  font-size: 4mm
+
+.page
+    position: relative
+    width: 100%
+    height: 100%
+    padding: 15mm 20mm
+    background-color: #fff
+    border-top: 6mm $base-color solid
+    border-bottom: 6mm $base-color solid
+    color: #000
+    
+#logo
+    width: 76.65mm
+    height: 17.46mm
+    background-repeat: no-repeat
+    margin-left: -3mm
+    background-image: url('../images/logo.svg')
+
+#parties
+  strong
+    font-family: 'Dosis'
+    font-size: 4mm
+    margin-bottom: 2mm
+    display: inline-block
+  > *
+    position: relative
+    float: left
+    h2
+      position: absolute
+      left: -22mm
+      text-align: right
+      text-transform: uppercase
+      font-weight: normal
+      color: $second-text-color
+      width: 20mm
+  .to
+    width: 40%
+  .from
+    width: 30%
+  .details
+    float: right
+      
+#services
+  width: 100%
+  table
+    width: 100%
+    border-bottom: 1px #ddd solid
+    border-spacing: 0
+    tr
+      th
+        font-size: 4mm
+        color: $second-text-color
+        font-family: 'Dosis'
+        font-weight: normal
+        padding: 2mm 0
+        text-transform: uppercase
+        text-align: left
+        border-bottom: 1px #ddd solid
+      td
+        padding-top: 4mm
+        vertical-align: top
+        strong
+          font-family: 'Dosis'
+          font-size: 4mm
+      th:last-child
+        text-align: right
+      td:last-child
+        text-align: right
+        color: $base-color
+        font-weight: bold
+        font-size: 4.5mm
+      
+#total
+  background-color: $base-color
+  color: #fff
+  border-radius: 1mm
+  font-weight: bold
+  font-size: 5.5mm
+  float: right
+  margin-top: 3mm
+  padding: 3.5mm 4mm 3mm 4mm
+  span
+    font-family: 'Dosis'
+    color: rgba(#fff, 0.5)
+    font-weight: normal
+    text-transform: uppercase
+    font-size: 3.5mm
+
+#due
+  float: right
+  clear: both
+  margin: 2mm 4mm 0 0
+  color: $second-text-color
+    
+#payment
+  position: absolute
+  bottom: 15mm
+  width: 100%
+  .method
+    width: 45%
+    float: left
+    height: 32mm
+  h2
+    margin-bottom: 2mm
+    color: $base-color
+  .details
+    clear: both
+
+p strong
+  font-family: 'Dosis'
+  font-size: 4mm
+    
+table
+  border-spacing: 0
+  padding: 0
+    
+table.values
+  tr
+    td:first-child
+      font-size: 4mm
+      color: $second-text-color
+      font-family: 'Dosis'
+      text-align: right
+      text-transform: uppercase
+      padding-right: 2mm
+    
+strong.number
+  font-family: 'Lato' !important
+
+#footer
+  position: absolute
+  background-image: url('../images/footer.svg')
+  width: 23.4mm
+  height: 22.04mm
+  background-repeat: no-repeat
+  bottom: -2mm
+  right: 30mm
+  &.expenses
+    width: 42.71mm
+    height: 15.58mm
+    left: 20mm
+    bottom: -2.5mm
+    background-image: url('../images/footer-expenses.svg')
+
+#expenses
+  .description
+    width: 66%
+    float: left
+  .details
+    float: right
+
+
+// Fonts
+
+@font-face
+  font-family: 'Lato'
+  src: url('../fonts/Lato-Regular.ttf') format("truetype")
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Lato'
+  src: url('../fonts/Lato-Bold.ttf') format("truetype")
+  font-weight: bold
+  font-style: normal
+
+@font-face
+  font-family: 'Dosis'
+  src: url('../fonts/Dosis-Regular.ttf') format("truetype")
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Dosis'
+  src: url('../fonts/Dosis-Bold.ttf') format("truetype")
+  font-weight: bold
+  font-style: normal
