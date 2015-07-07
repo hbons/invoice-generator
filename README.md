@@ -1,5 +1,7 @@
 # Invoice Generator
 
+![Banner](https://raw.githubusercontent.com/hbons/invoice-generator/master/public/images/banner.png)
+
 This is a template I use for generating invoices. Putting this out there in the hope that it may be useful. You can use the template as long as you replace the colours, fonts, and imagery.
 
 
